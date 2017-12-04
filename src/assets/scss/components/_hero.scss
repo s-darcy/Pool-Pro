@@ -1,0 +1,16 @@
+.hero {
+    background-image: url( '/img/water-image.jpg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400%;
+    padding-top: 129px;
+
+    @media screen and (min-width: 1026px) {
+        background-size: 100%;
+    }//desktop media query
+
+    @media screen and (min-width: 642px) and (max-width: 1025px){ 
+        background-size: 200%;
+    }//tablet media query
+
+}//hero

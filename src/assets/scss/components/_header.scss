@@ -1,0 +1,65 @@
+header {
+
+    box-shadow: 5px 5px 5px $color-Silver;
+    
+    @media screen and (min-width: 1026px) {
+        
+        .top-nav { 
+
+            &__top-bar {
+                background-color: $color-Congress-Blue;
+                height: 42px;
+                padding: 12px 0px;
+            }
+
+            &__top-bar--list-items {
+                color: $color-White; 
+            }
+
+            &__button {
+                text-transform: capitalize;
+                border: 1px solid $color-Mariner;
+            }
+
+            &__second-level {
+                display: flex;
+                justify-content: space-between;
+                color: $color-Congress-Blue;
+                font-family: OpenSans-Bold;
+            }
+
+        }//top-nav
+       
+    }//desktop media query
+
+    @media screen and (min-width: 642px) and (max-width: 1025px){ 
+        
+        .top-nav {
+            
+            &__top-bar {
+                background-color: $color-Congress-Blue;
+                padding: 12px 0px;
+                height: 42px;
+            }
+
+            &__top-bar--list-items {
+                color: $color-White;
+            }
+
+            &__second-level {
+                display: flex;
+                justify-content: space-between;
+                color: $color-Congress-Blue;
+                font-family: OpenSans-Bold;
+            }
+
+            &__button {
+                text-transform: capitalize;
+                border: 1px solid $color-Mariner;
+            }
+
+        }//top-nav
+        
+    }//tablet media query 
+
+}//header

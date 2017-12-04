@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('/assets/fonts/open-sans/OpenSans-Regular.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('/assets/fonts/open-sans/OpenSans-Bold.ttf') format('ttf');
+}
+
+html, body {
+    font-family: 'OpenSans-Regular';
+    font-size: 15px; 
+    color: $color-Mine-Shaft;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 50%;
+}
+
+.row {
+    max-width: 1300px;
+}
