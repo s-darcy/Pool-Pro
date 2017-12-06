@@ -1,16 +1,91 @@
 .hero {
-    background-image: url( '/img/water-image.jpg' );
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 400%;
-    padding-top: 129px;
+
+    background-color: $color-Wild-Sand;
+    border: 1px solid $color-Alto;
+
+    &__filter {
+        width: 400px;
+    }
+
+    &__dealers {
+        font-size: 16px;
+        color: $color-Mariner;
+        line-height: 21px;
+        font-family: 'OpenSans-Bold';
+        margin-top: 34px;
+        margin-bottom: 0px;
+    }
+
+    &__filter--header,
+    &__filter--drop-down-arrow {
+        margin-top: 17px;
+    }    
+
+    &__filter--header {
+        border: 1px solid $color-Alto;
+        background-color: $color-White;
+        height: 50px;
+        font-family: 'OpenSans-Bold';
+        font-size: 15px;
+        line-height: 21px;
+        padding: 17px 11px 12px;
+        margin-bottom: 0px;
+        width: 123px;
+    }
+
+    &__filter--drop-down-arrow {
+        border: 1px solid $color-Alto; 
+        background-color: $color-Wild-Sand;
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+        padding: 17px 20px;
+        margin-left: -11px;
+    }
+
+    &__form {
+        background-color: $color-White;
+        border: 1px solid $color-Alto;
+        width: 352px;
+        height: 249px; 
+        margin-top: -17px;
+    }
+    
+    &__options--item {
+        font-family: 'OpenSans-Regular';
+        font-size: 16px;
+        line-height: 58px;
+        margin-left: 9px;
+    }
+
+    @media screen and (max-width: 641px) {
+        .columns {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        &__background-image {
+            background-image: none;
+            width: 110%;
+            height: 112px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+    }//desktop media query
 
     @media screen and (min-width: 1026px) {
         background-size: 100%;
+        background-image: url( '/img/water-image.jpg' );
+        background-repeat: no-repeat;
+        background-position: center;
     }//desktop media query
 
     @media screen and (min-width: 642px) and (max-width: 1025px){ 
         background-size: 200%;
+        background-image: url( '/img/water-image.jpg' );
+        background-repeat: no-repeat;
+        background-position: center;
     }//tablet media query
 
 }//hero

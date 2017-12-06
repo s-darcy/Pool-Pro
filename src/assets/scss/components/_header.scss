@@ -1,24 +1,83 @@
 header {
 
-    box-shadow: 5px 5px 5px $color-Silver;
+    box-shadow: -3px 3px 6px $color-Silver;
+    border-bottom: 1px solid $color-Silver;
+    // padding-left: 10px;
+    height: 57px;
+
+    .top-nav { 
+        
+        &__logo {
+            width: 155px;
+            height: 20px;
+            margin-left: 10px;
+            margin-top: 17px;
+        }
+
+        &__button {
+            text-transform: capitalize;
+            border: 2px solid $color-Portage;
+            padding-right: 0px;
+            padding-left: 0px;
+            width: 106px;
+            height: 40px;
+            margin-top: 8px;
+        }
+
+        &__button > a {
+            color: $color-Mariner;
+            font-family: 'OpenSans-Bold'; ;
+        }
+
+        &__navigation-bars {
+            width: 54px;
+            height: 54px;
+            border: 1px solid $color-Dusty-Gray;
+            border-radius: 100%;
+            padding: 16px;
+            box-shadow: 0px 3px 12px 0px;
+            margin-top: 6px;
+            margin-right: 10px;
+            margin-left: 20px;
+            background-color: $color-White;
+        }
+
+    } //top-nav   
     
     @media screen and (min-width: 1026px) {
-        
+    
+        height: 148px;
+
         .top-nav { 
+            background-color: $color-Congress-Blue;
 
             &__top-bar {
-                background-color: $color-Congress-Blue;
                 height: 42px;
                 padding: 12px 0px;
             }
 
             &__top-bar--list-items {
                 color: $color-White; 
+                display: flex;
+                justify-content: space-around;
+            }
+
+            &__logo {
+                margin: 42px 40px 33px;
+                width: 231px;
+                height: 31px;
             }
 
             &__button {
                 text-transform: capitalize;
                 border: 1px solid $color-Mariner;
+                width: 176px;
+                height: 49px;
+            }
+
+            &__button > a {
+                padding-top: 17px;
+                padding-bottom: 12px;
             }
 
             &__second-level {
@@ -26,6 +85,10 @@ header {
                 justify-content: space-between;
                 color: $color-Congress-Blue;
                 font-family: OpenSans-Bold;
+                height: 106px;
+                padding-top: 50px;
+                line-height: 20px;
+                padding-bottom: 36px;
             }
 
         }//top-nav
@@ -34,16 +97,26 @@ header {
 
     @media screen and (min-width: 642px) and (max-width: 1025px){ 
         
+        height: 148px;
+
         .top-nav {
-            
+            background-color: $color-Congress-Blue;
+
             &__top-bar {
-                background-color: $color-Congress-Blue;
                 padding: 12px 0px;
                 height: 42px;
             }
 
             &__top-bar--list-items {
                 color: $color-White;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            &__logo {
+                margin: 42px 40px 33px;
+                width: 231px;
+                height: 25px;
             }
 
             &__second-level {
@@ -51,11 +124,23 @@ header {
                 justify-content: space-between;
                 color: $color-Congress-Blue;
                 font-family: OpenSans-Bold;
+                height: 106px;
+                padding-top: 50px;
+                line-height: 20px;
+                padding-bottom: 36px;
             }
 
             &__button {
                 text-transform: capitalize;
                 border: 1px solid $color-Mariner;
+                width: 176px;
+                height: 49px;
+                margin-top: 33px;
+            }
+
+            &__button > a {
+                padding-top: 17px;
+                padding-bottom: 12px;
             }
 
         }//top-nav
