@@ -108,17 +108,15 @@ class App extends Component {
 
 {/* DESKTOP and TABLET */}                 
             <div className="hero__options  show-for-medium-up">
-              <div className="hero__filter  row">
-                <div className="columns medium-offset-2 medium-4">
+              <div className="row">
+                <div className="columns medium-3 large-offset-2 large-2">
                   <p className="hero__dealers">7 dealers in 28226</p>
-                </div>
-                <div className="columns medium-7 end">      
+                </div>{/* /.columns */}
+                <div className="columns medium-2 large-2">      
                   <h2 className="hero__filter--header  show-for-medium-up">Filter Results</h2>              
-                </div>{/* /.columns */}        
-              </div>{/* /.row */}     
-              <div className="row hidden-for-small-only">
-                <div className="columns">
-                  <form className="" method="GET">    
+                </div>
+                <div className="columns medium-7 large-6 end">   
+                  <form className="hero__form" method="GET">    
                     <nav>
                       <ul className="inline-list">
                         <li>
@@ -137,7 +135,7 @@ class App extends Component {
                           <input type="radio" value="Commercial"/> 
                           <label className="hero__options--item"  htmlFor="Commercial">Commercial</label>
                         </li>
-                    </ul> 
+                      </ul> 
                     </nav>  
                   </form>
                 </div>{/* /.columns */}
