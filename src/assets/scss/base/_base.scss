@@ -8,6 +8,21 @@
     src: url('/assets/fonts/open-sans/OpenSans-Bold.ttf') format('ttf');
 }
 
+@font-face {
+    font-family: 'OpenSans-ExtraBold';
+    src: url('/assets/fonts/open-sans/OpenSans-ExtraBold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('/assets/fonts/open-sans/OpenSans-Light.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Italic';
+    src: url('/assets/fonts/open-sans/OpenSans-Italic.ttf') format('ttf');
+}
+
 html, body {
     font-family: 'OpenSans-Regular';
     font-size: 15px; 

@@ -109,12 +109,15 @@ class App extends Component {
 {/* DESKTOP and TABLET */}                 
             <div className="hero__options  show-for-medium-up">
               <div className="row">
-                <div className="columns medium-3 large-offset-2 large-2">
+                <div className="columns medium-2 large-2 large-offset-1">
                   <p className="hero__dealers">7 dealers in 28226</p>
                 </div>{/* /.columns */}
-                <div className="columns medium-2 large-2">      
+                <div className="columns large-1 show-for-large-up">
+                  <span></span>
+                </div>{/* /.columns */}
+                <div className="columns medium-3 large-2">      
                   <h2 className="hero__filter--header  show-for-medium-up">Filter Results</h2>              
-                </div>
+                </div>{/* /.columns */}
                 <div className="columns medium-7 large-6 end">   
                   <form className="hero__form" method="GET">    
                     <nav>
@@ -137,56 +140,66 @@ class App extends Component {
                         </li>
                       </ul> 
                     </nav>  
-                  </form>
+                  </form>{/* /.hero__form */}
                 </div>{/* /.columns */}
               </div>{/* /.row */} 
             </div>{/* /.hero__options */}
 {/* DESKTOP and TABLET */}           
           </section>{/* /.hero */}
 
-          <section className="cards">
-          <div className="row">
-           <div className="columns medium-4">
-               <h2>Aqua Experts</h2>
-               <a href="#"><i className="fa fa-phone" aria-hidden="true"></i>1.888.888.8888</a>
-               <p>Can’t talk now? Click below to send an email.</p>
-               <button><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
-               <h3>Business Hours</h3>
-               <ul>
-                   <li>Weekdays 7:00am - 7:00pm</li>
-                   <li>Saturdays 7:00am - 3:00pm</li>
-                   <li>Sundays - On Call</li>
-               </ul>
-               <ul className="inline-list">
-                   <li>
-                    <a href="#">
-                      <i className="fa fa-star" aria-hidden="true"></i>
-                       Installation Pro
-                    </a>   
-                   </li>
-                   <li>
-                    <a href="#">
-                      <i className="fa fa-cog" aria-hidden="true"></i>
-                       Service Pro
-                    </a>   
-                   </li>
-                < br/>   
-                   <li>
-                    <a href="#">
-                    <i className="fa fa-home" aria-hidden="true"></i>
-                       Residential Pro
-                    </a>   
-                   </li>
-                   <li>
-                    <a href="#">
-                    <img className="" alt="Pool Pros Logo" src="/img/users.svg" />
-                       Commercial Pro
-                    </a>   
-                   </li>
-               </ul>
-              </div>{/* /.columns */}    
-          </div>{/* /.row */}
-       </section>{/* /.cards */}
+          <section className="text-center">
+            <div className="row">
+              <div className="card-section columns medium-4">
+                <div className="cards">
+                  <h2 className="cards__header">Aqua Experts</h2>
+                  <button className="cards__phone">
+                    <a href="#" type="button">
+                      <i className="fa fa-phone" aria-hidden="true"></i>
+                      <span>Tap to call</span>
+                      1.888.888.8888
+                    </a>
+                  </button>  
+                  <p className="cards__text">Can’t talk now? Click below to send an email.</p>
+                  <button className="cards__contact-button"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
+                  <h3 className="cards__business-hours--header">Business Hours</h3>
+                  <ul>
+                      <li className="cards__business-hours--item">Weekdays 7:00am - 7:00pm</li>
+                      <li className="cards__business-hours--item">Saturdays 7:00am - 3:00pm</li>
+                      <li className="cards__business-hours--item">Sundays - On Call</li>
+                  </ul>
+                  <div className="card__services--group">
+                    <ul className="inline-list text-center">
+                      <li>
+                      <a className="cards__services" href="#">
+                        <i className="fa fa-star" aria-hidden="true"></i>
+                          Installation Pro
+                      </a>   
+                      </li>
+                      <li>
+                      <a className="cards__services" href="#">
+                        <i className="fa fa-cog" aria-hidden="true"></i>
+                          Service Pro
+                      </a>   
+                      </li>
+                      < br/>   
+                      <li>
+                      <a className="cards__services" href="#">
+                        <i className="fa fa-home" aria-hidden="true"></i>
+                          Residential Pro
+                      </a>   
+                      </li>
+                      <li>
+                      <a className="cards__services" href="#">
+                      <img className="cards__services--users" alt="Pool Pros Logo" src="/img/users.svg" />
+                          Commercial Pro
+                      </a>   
+                      </li>
+                    </ul>
+                  </div>  
+                </div>{/* /.columns */}    
+              </div>{/* /.row */}
+            </div>{/* /.cards */}  
+          </section>{/* /.section */}
 
       </main>
       <footer>

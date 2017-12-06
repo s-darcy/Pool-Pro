@@ -24,6 +24,7 @@
     &__filter--header {
         border: 1px solid $color-Alto;
         background-color: $color-White;
+        color: $color-Mine-Shaft;
         height: 50px;
         font-family: 'OpenSans-Bold';
         font-size: 15px;
@@ -81,6 +82,17 @@
         background-image: url( '/img/water-image.jpg' );
         background-repeat: no-repeat;
         background-position: top;
+        height: 199px;
+        border-bottom: none;
+        margin-bottom: 26px;
+
+            span:before {
+                content:'|';
+                margin-left: 30px;
+                color: $color-Gallery;
+                font-size: 60px;
+                width: 5px;
+            }
 
             &__options {
                 background-color: $color-Wild-Sand;
@@ -90,16 +102,21 @@
                 margin: 112px auto;
             }
 
+            &__dealers {
+                padding-left: 20px;
+            }
+
             &__filter--header {
                 background-color: transparent;
                 border: none;
                 height: 50px;
                 font-family: 'OpenSans-Bold';
-                font-size: 15px;
+                font-size: 18px;
                 line-height: 21px;
                 padding: 17px 11px 12px;
                 margin-bottom: 0px;
-                width: 123px;
+                width: 200px;
+
             }
 
             &__form {
@@ -107,6 +124,10 @@
                 border: none;
                 background-color: transparent;
                 width: 600px
+            }
+
+            &__options--item {
+                font-size: 12px;
             }
 
     }//desktop media query
@@ -117,6 +138,9 @@
         background-image: url( '/img/water-image.jpg' );
         background-repeat: no-repeat;
         background-position: top;
+        border-bottom: none;
+        height: 199px;
+        margin-bottom: 26px;
 
         &__options {
             background-color: $color-Wild-Sand;
@@ -131,11 +155,11 @@
             border: none;
             height: 50px;
             font-family: 'OpenSans-Bold';
-            font-size: 15px;
+            font-size: 18px;
             line-height: 21px;
             padding: 17px 11px 12px;
             margin-bottom: 0px;
-            width: 123px;
+            width: 200px;
         }
 
         &__form {
@@ -143,6 +167,10 @@
             border: none;
             background-color: transparent;
             width: 600px
+        }
+
+        &__options--item {
+            font-size: 12px;
         }
 
     }//tablet media query
