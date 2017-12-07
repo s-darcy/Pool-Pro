@@ -1,0 +1,72 @@
+.footer {
+
+    &__top-section {
+        background-color: $color-Congress-Blue;
+        padding-top: 37px;
+    } 
+    
+    &__logo {
+        margin: 0px auto 26px;
+        width: 35%;
+    }
+
+    &__connect {
+        color: $color-White;
+        font-family: 'OpenSans-Bold';
+        font-size: 15px;
+    }
+
+    &__social-media {
+        font-size: 21px;
+        color: $color-Pigeon-Post;
+    }
+
+    &__second-section,
+    &__third-section {
+        background-color: $color-Mariner;
+       padding-top: 10px;
+    }
+
+    &__second-section--mobile-only {
+        border-bottom: 1px solid $color-White;
+    }
+
+    &__second-section > .columns,
+    &__third-section > .columns {
+        padding: 0px !important;
+    }
+
+    &__second-section > .inline-list {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+
+    &__second-section--divider,
+    &__third-section--divider {
+        color: $color-White;
+        font-size: 22px;
+        line-height: 22px;
+        padding-left: 20px;
+    }
+
+    &__second-section--option,
+    &__third-section--option {
+        color: $color-White;
+        font-family: 'OpenSans-Regular';
+        font-size: 12px;
+        padding-top: 10px;
+    }
+
+    &__third-section {
+        padding-left: 10px;
+    }
+
+}
+
+ @media screen and (max-width: 641px) { 
+
+    .inline-list > li > * {
+        display: inline-block;
+    }
+
+}   

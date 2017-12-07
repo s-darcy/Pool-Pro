@@ -167,35 +167,35 @@ class App extends Component {
                       <li className="cards__business-hours--item">Saturdays 7:00am - 3:00pm</li>
                       <li className="cards__business-hours--item">Sundays - On Call</li>
                   </ul>
-                  <div className="card__services--group">
+                  <div className="cards__services--group">
                     <ul className="inline-list text-center">
                       <li>
-                      <a className="cards__services" href="#">
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                          Installation Pro
-                      </a>   
+                        <a className="cards__services" href="#">
+                          <i className="fa fa-star" aria-hidden="true"></i>
+                            Installation Pro
+                        </a>   
                       </li>
                       <li>
-                      <a className="cards__services" href="#">
-                        <i className="fa fa-cog" aria-hidden="true"></i>
-                          Service Pro
-                      </a>   
+                        <a className="cards__services" href="#">
+                          <i className="fa fa-cog" aria-hidden="true"></i>
+                            Service Pro
+                        </a>   
                       </li>
                       < br/>   
                       <li>
-                      <a className="cards__services" href="#">
-                        <i className="fa fa-home" aria-hidden="true"></i>
-                          Residential Pro
-                      </a>   
+                        <a className="cards__services" href="#">
+                          <i className="fa fa-home" aria-hidden="true"></i>
+                            Residential Pro
+                        </a>   
                       </li>
                       <li>
-                      <a className="cards__services" href="#">
-                      <img className="cards__services--users" alt="Pool Pros Logo" src="/img/users.svg" />
-                          Commercial Pro
-                      </a>   
+                        <a className="cards__services" href="#">
+                        <img className="cards__services--users" alt="Pool Pros Logo" src="/img/users.svg" />
+                            Commercial Pro
+                        </a>   
                       </li>
                     </ul>
-                  </div>  
+                  </div>{/* /.card__services--group */}  
                 </div>{/* /.columns */}    
               </div>{/* /.row */}
             </div>{/* /.cards */}  
@@ -203,32 +203,53 @@ class App extends Component {
 
       </main>
       <footer>
-        <div className="row">
-          <div className="columns medium-offset-4 medium-4 text-center">
-          <img alt="Pool Pros Logo" src="/img/pool-pros-logo-footer.png" />
-            <div>
-              <h3>CONNECT WITH US</h3>
+        <div className="footer__top-section">
+          <div className="row">
+            <div className="columns medium-offset-4 medium-4 text-center">
+              <img className="footer__logo  hide-for-medium-up" alt="Pool Pros Logo" src="/img/pool-pros-logo-footer.png" />
+            </div>{/* /.columns */}
+          </div>{/* /.row */}
+          <div className="row">
+            <div className="columns medium-offset-4 medium-2 small-6 small-offset-1 text-center">  
+              <h3 className="footer__connect">CONNECT WITH US</h3>
+            </div>{/* /.columns */}
+            <div className="columns medium-3 small-5 text-center end">     
               <ul className="inline-list">
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i className="footer__social-media  fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i className="footer__social-media  fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i className="footer__social-media  fa fa-youtube-square" aria-hidden="true"></i></a></li>
               </ul>  
-            </div>
-            <div>
+            </div>{/* /.columns */}
+          </div>{/* /.row */}
+        </div>{/* /.footer__top-section*/} 
+        <div className="footer__second-section">
+          <div className="footer__second-section--mobile-only   show-for-small-only"> 
+            <div className="row"> 
               <ul className="inline-list">
-                <li><a href="#"><i class="fa fa-copyright" aria-hidden="true"></i> 2017 Pool Pros</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-              </ul> 
-            </div>
-            <div>
-              <ul className="inline-list">
-                <li><a href="#">Dealers and Distributors</a></li>
-                <li><a href="#">Commercial Service </a></li>
-              </ul>  
-            </div>      
-          </div>{/* /.columns */}  
-        </div>{/* /.row */}  
+                <div className="columns small-5 small-offset-1  text-center">
+                  <li><a className="footer__second-section--option" href="#">Dealers and Distributors</a></li>
+                </div>{/* /.columns */}
+                <div className="columns small-1">
+                  <span className="footer__second-section--divider">|</span>
+                </div>{/* /.columns */} 
+                <div className="columns small-5 text-center end">  
+                  <li><a className="footer__second-section--option"  href="#">Commercial Service </a></li>
+                </div>{/* /.columns */}  
+              </ul>       
+            </div>{/* /.row */}
+          </div>{/* /.footer__second-section--mobile-only */}
+        </div>{/* /.footer__second-section--mobile-only */}
+        <div className="footer__third-section">     
+          <div className="row">
+          <div className="columns  medium-6 medium-offset-3 large-5 large-offset-4 text-center">   
+            <ul className="inline-list text-center">
+                <li><a className="footer__third-section--option  footer__pool-pros"  href="#"><i className="fa fa-copyright" aria-hidden="true"></i> 2017 Pool Pros</a><span className="footer__third-section--divider">|</span></li>
+                <li><a className="footer__third-section--option"  href="#">Privacy Policy</a><span className="footer__third-section--divider">|</span></li>
+                <li><a className="footer__third-section--option"  href="#">Terms and Conditions</a></li>
+            </ul> 
+            </div>{/* /.columns */}   
+          </div>{/* /.row */}
+        </div>{/* /.footer__third-section */}   
       </footer>  
     </div>  
     );

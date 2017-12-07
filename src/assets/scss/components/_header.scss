@@ -19,6 +19,7 @@ header {
             border: 2px solid $color-Portage;
             padding-right: 0px;
             padding-left: 0px;
+            padding-top: 7px;
             width: 106px;
             height: 40px;
             margin-top: 8px;
@@ -26,7 +27,8 @@ header {
 
         &__button > a {
             color: $color-Mariner;
-            font-family: 'OpenSans-Bold'; ;
+            font-family: 'OpenSans-Bold'; 
+            padding-top: -5px;
         }
 
         &__navigation-bars {
@@ -73,6 +75,8 @@ header {
                 border: 1px solid $color-Mariner;
                 width: 176px;
                 height: 49px;
+                margin-top: 35px;
+                padding-top: 14px;
             }
 
             &__button > a {
@@ -133,9 +137,11 @@ header {
             &__button {
                 text-transform: capitalize;
                 border: 1px solid $color-Mariner;
-                width: 176px;
+                width: 150px;
                 height: 49px;
                 margin-top: 33px;
+                padding-top: 14px;
+                
             }
 
             &__button > a {
