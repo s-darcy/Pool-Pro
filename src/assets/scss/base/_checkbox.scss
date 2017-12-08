@@ -1,0 +1,11 @@
+input[type=checkbox] {
+    width: 26px;
+    border: 1px solid transparent;
+    background-color: $color-Mariner;
+    // padding: 8px;
+    color: $color-White;
+    border-radius: 3px;
+    content: "\25A0";
+    font-size: 26px;
+}
+

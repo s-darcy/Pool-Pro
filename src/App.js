@@ -1,8 +1,33 @@
 import React, { Component } from 'react';
-import './assets/css/styles.css';
+import { Toggle } from "react-powerplug";
 
+import './assets/css/styles.css';
+import './assets/js/project.js';
+import DropDownMenu from './DropDownMenu';
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+
+      dropDown : false,
+
+    }; 
+    this.dropDownClick = this.dropDownClick.bind(this);
+   
+  }//Constructor Binding State
+
+    dropDownClick = (event) => {
+      event.preventDefault();
+        this.setState({
+          dropDown : !this.state.dropDown
+        });
+    };
+
   render() {
+
+    let dropDownMenu = <DropDownMenu />
+
     return (
     <div>  
       <header>
@@ -12,7 +37,7 @@ class App extends Component {
           <button className="top-nav__button  columns small-offset-1 small-3 end">
             <a href="#" Find a Pool Pro><i className="fa fa-map-marker" aria-hidden="true"></i> FIND A PRO</a>
           </button>{/* /.top-nav__button */}
-          <img className="top-nav__navigation-bars  columns small-2" alt="mobile navigation" src="/img/navigation-mobile.svg" />
+          <a href="#"><img className="top-nav__navigation-bars  columns small-2" alt="mobile navigation" src="/img/navigation-mobile.svg" /></a>
         </div>{/* /.top-nav */}
 {/* MOBILE ONLY */}  
 
@@ -69,36 +94,28 @@ class App extends Component {
                   <div className="columns small-6 small-offset-1">
                     <p className="hero__dealers">7 dealers in 28226</p>
                   </div>{/* /.columns */}
-                  <div className="columns small-4 inline-list">
-                    <h2 className="hero__filter--header  show-for-small-only">Filter Results</h2>
-                  </div>
-                  <div className="columns small-1 end">   
-                    <i className="hero__filter--drop-down-arrow  fa fa-sort-desc" aria-hidden="true"></i>
-                  </div>{/* /.columns */}
+                    <div className="columns small-4 inline-list">
+                      <h2 className="hero__filter--header  show-for-small-only">Filter Results</h2>
+                    </div>
+                    <div className="columns small-1 end"> 
+                    {/* <Toggle>
+                      {({ on, toggle }) => (
+                        <a href="#" checked={on} onClick={toggle}>
+                          <i className="hero__filter--drop-down-arrow  fa fa-sort-desc" aria-hidden="true"></i>
+                        </a>
+                      )}
+                    </Toggle> */}
+                      <a href="#" onClick={(event) => {this.dropDownClick(event)}}>
+                       <i className="hero__filter--drop-down-arrow  fa fa-sort-desc" aria-hidden="true"></i>
+                      </a>
+                    </div>{/* /.columns */}
                 </div>  
               </div>{/* /.hero__filter */}  
               <div className="row">
                 <div className="columns small-offset-1">
                   <form className="hero__form" method="GET">    
                     <nav>
-                      <ul>
-                        <li>
-                          <input type="radio" value="Service"/>
-                          <label className="hero__options--item" htmlFor="Service">Service</label>
-                        </li> 
-                        <li>
-                          <input type="radio" value="Installation"/>
-                          <label className="hero__options--item" htmlFor="Installation">Installation</label>
-                        </li> 
-                        <li>
-                          <input type="radio" value="Residential"/>
-                          <label className="hero__options--item" htmlFor="Residential">Residential</label>
-                        </li> 
-                        <li>
-                          <input type="radio" value="Commercial"/> 
-                          <label className="hero__options--item"  htmlFor="Commercial">Commercial</label>
-                        </li>
-                      </ul> 
+                       {this.state.dropDown && dropDownMenu}
                     </nav>  
                   </form>
                 </div>{/* /.columns */}
@@ -123,19 +140,19 @@ class App extends Component {
                     <nav>
                       <ul className="inline-list">
                         <li>
-                          <input type="radio" value="Service"/>
+                          <input  type="checkbox" value="Service" />
                           <label className="hero__options--item" htmlFor="Service">Service</label>
                         </li> 
                         <li>
-                          <input type="radio" value="Installation"/>
+                          <input type="checkbox" value="Installation" />
                           <label className="hero__options--item" htmlFor="Installation">Installation</label>
                         </li> 
                         <li>
-                          <input type="radio" value="Residential"/>
+                          <input type="checkbox" value="Residential"/>
                           <label className="hero__options--item" htmlFor="Residential">Residential</label>
                         </li> 
                         <li>
-                          <input type="radio" value="Commercial"/> 
+                          <input type="checkbox" value="Commercial"/> 
                           <label className="hero__options--item"  htmlFor="Commercial">Commercial</label>
                         </li>
                       </ul> 
@@ -160,8 +177,9 @@ class App extends Component {
                     </a>
                   </button>  
                   <p className="cards__text">Can’t talk now? Click below to send an email.</p>
-                  <button className="cards__contact-button"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
-                  <h3 className="cards__business-hours--header">Business Hours</h3>
+                  <button data-reveal-id="call-to-action-modal-mobile" className="cards__contact-button  hidden-for-medium-up"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
+                  <button data-reveal-id="call-to-action-modal" className="cards__contact-button  hidden-for-small-only"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
+                  <h3 className="cards__business-hours--header ">Business Hours</h3>
                   <ul>
                       <li className="cards__business-hours--item">Weekdays 7:00am - 7:00pm</li>
                       <li className="cards__business-hours--item">Saturdays 7:00am - 3:00pm</li>
@@ -250,10 +268,12 @@ class App extends Component {
             </div>{/* /.columns */}   
           </div>{/* /.row */}
         </div>{/* /.footer__third-section */}   
-      </footer>  
-    </div>  
+      </footer> 
+    </div>
     );
+
   }
+
 }
 
 export default App;
