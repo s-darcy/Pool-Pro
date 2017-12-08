@@ -1,0 +1,42 @@
+.mobile-nav {
+
+    border-top: 8px solid $color-Pacific-Blue;
+    border-bottom: 8px solid $color-Pacific-Blue;
+    background-color: $color-White;
+
+    &__header {
+        color: $color-Endeavour;
+        margin-bottom: 36px;
+        margin-top: 59px;
+        font-size: 18px;
+    }
+
+    &__exit {
+        color: $color-Pacific-Blue;
+    }
+
+    &__item-row {
+        background-color: $color-Wild-Sand;
+        height: 80px;
+        padding-top: 31px;
+        margin-bottom: 4px;
+        display: inline-block;
+    }
+
+    &__item {
+        color: $color-Dove-Gray;
+        line-height: 18px;
+        font-size: 18px;
+        display: inline-block;
+        font-family: Helvetica, sans-serif;
+    }
+
+    &__next {
+        color: $color-Pacific-Blue;
+        display: inline-block;
+        float: right;
+        line-height: 18px;
+        font-size: 20px;
+    }
+
+}

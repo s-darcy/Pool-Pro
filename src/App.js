@@ -4,6 +4,7 @@ import { Toggle } from "react-powerplug";
 import './assets/css/styles.css';
 import './assets/js/project.js';
 import DropDownMenu from './DropDownMenu';
+import MobileNav from './MobileNav';
 class App extends Component {
 
   constructor() {
@@ -11,9 +12,11 @@ class App extends Component {
     this.state = {
 
       dropDown : false,
+      mobileNavClicked : false,
 
     }; 
     this.dropDownClick = this.dropDownClick.bind(this);
+    this.mobileNavClick = this.mobileNavClick.bind(this);
    
   }//Constructor Binding State
 
@@ -24,9 +27,17 @@ class App extends Component {
         });
     };
 
+    mobileNavClick = (event) => {
+      event.preventDefault();
+        this.setState({
+          mobileNavClicked : !this.state.mobileNavClicked
+        });
+    };
+
   render() {
 
     let dropDownMenu = <DropDownMenu />
+    let mobileNav = <MobileNav />
 
     return (
     <div>  
@@ -37,7 +48,11 @@ class App extends Component {
           <button className="top-nav__button  columns small-offset-1 small-3 end">
             <a href="#" Find a Pool Pro><i className="fa fa-map-marker" aria-hidden="true"></i> FIND A PRO</a>
           </button>{/* /.top-nav__button */}
-          <a href="#"><img className="top-nav__navigation-bars  columns small-2" alt="mobile navigation" src="/img/navigation-mobile.svg" /></a>
+          <a href="#" onClick={(event) => {this.mobileNavClick(event)}}>
+            <img className="top-nav__navigation-bars  columns small-2" alt="mobile navigation" src="/img/navigation-mobile.svg" />
+          </a>
+          
+          
         </div>{/* /.top-nav */}
 {/* MOBILE ONLY */}  
 
@@ -83,6 +98,7 @@ class App extends Component {
           <section className="section hero">
             <div className="row">
               <div className="columns">
+                  {this.state.mobileNavClicked && mobileNav}
                   <img className="hero__background-image  show-for-small-only" alt="Pool Pros Logo" src="/img/water-image.jpg" />
               </div>
             </div>
