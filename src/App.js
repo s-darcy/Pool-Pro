@@ -5,6 +5,7 @@ import './assets/css/styles.css';
 import './assets/js/project.js';
 import DropDownMenu from './DropDownMenu';
 import MobileNav from './MobileNav';
+import Email from './Email';
 class App extends Component {
 
   constructor() {
@@ -13,10 +14,13 @@ class App extends Component {
 
       dropDown : false,
       mobileNavClicked : false,
+      emailClicked : false,
 
     }; 
+
     this.dropDownClick = this.dropDownClick.bind(this);
     this.mobileNavClick = this.mobileNavClick.bind(this);
+    this.emailClick = this.emailClick.bind(this);
    
   }//Constructor Binding State
 
@@ -34,10 +38,25 @@ class App extends Component {
         });
     };
 
+    emailClick = (event) => {
+      event.preventDefault();
+        this.setState({
+          emailClicked : !this.state.emailClicked
+        });
+    };
+
   render() {
 
+    let mobileNavClicked = this.state.mobileNavClicked;
+    let emailClicked = this.state.emailClicked;
+
     let dropDownMenu = <DropDownMenu />
-    let mobileNav = <MobileNav />
+    let mobileNav = <MobileNav 
+      mobileNavClick={this.mobileNavClick}
+    />
+    let email = <Email 
+      emailClick={this.emailClick}
+    />
 
     return (
     <div>  
@@ -172,26 +191,27 @@ class App extends Component {
 {/* DESKTOP and TABLET */}           
           </section>{/* /.hero */}
 
-          <section className="text-center">
+          <section>
+          {this.state.emailClicked && email}
             <div className="row">
               <div className="card-section columns medium-4">
-                <div className="cards">
-                  <h2 className="cards__header">Aqua Experts</h2>
-                  <button className="cards__phone">
+                <div className="cards text-center">
+                  <h2 className="cards__header text-center">Aqua Experts</h2>
+                  <button className="cards__phone text-center">
                     <a href="#" type="button">
                       <i className="fa fa-phone" aria-hidden="true"></i>
-                      <span>Tap to call</span>
+                      <span className="text-center">Tap to call</span>
                       1.888.888.8888
                     </a>
                   </button>  
-                  <p className="cards__text">Can’t talk now? Click below to send an email.</p>
-                  <button data-reveal-id="call-to-action-modal-mobile" className="cards__contact-button  hidden-for-medium-up"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
-                  <button data-reveal-id="call-to-action-modal" className="cards__contact-button  hidden-for-small-only"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
+                  <p className="cards__text text-center">Can’t talk now? Click below to send an email.</p>
+                  <button id="myBtn" onClick={(event) => {this.emailClick(event)}} className="cards__contact-button  hidden-for-medium-up text-center"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
+                  <button id="myBtn" onClick={(event) => {this.emailClick(event)}} className="cards__contact-button  hidden-for-small-only text-center"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
                   <h3 className="cards__business-hours--header ">Business Hours</h3>
                   <ul>
-                      <li className="cards__business-hours--item">Weekdays 7:00am - 7:00pm</li>
-                      <li className="cards__business-hours--item">Saturdays 7:00am - 3:00pm</li>
-                      <li className="cards__business-hours--item">Sundays - On Call</li>
+                      <li className="cards__business-hours--item  text-center">Weekdays 7:00am - 7:00pm</li>
+                      <li className="cards__business-hours--item  text-center">Saturdays 7:00am - 3:00pm</li>
+                      <li className="cards__business-hours--item  text-center">Sundays - On Call</li>
                   </ul>
                   <div className="cards__services--group">
                     <ul className="inline-list text-center">

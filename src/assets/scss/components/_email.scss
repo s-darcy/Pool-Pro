@@ -1,0 +1,98 @@
+
+.email {
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    background-color: $color-White;
+    width: 80%;
+    margin: 0 10%;
+    padding-top: 100px; /* Location of the box */
+
+
+
+    & > .columns {
+        min-height: 20px;
+    }
+
+    &__top-row {
+        background-color: $color-Congress-Blue;
+    }
+
+    &__header {
+        color: $color-White;
+        margin-bottom: 15px;
+        margin-top: 25px;
+        font-size: 14px;
+        display: inline-block;
+    }
+
+    &__exit {
+        color: $color-White;
+        float: right;
+        width: 16px;
+        display: inline-block;
+        margin-right: -20px;
+    }
+
+    &__company-name {
+        line-height: 38px;
+        font-size: 28px;
+        color: $color-White;
+        margin-bottom: 34px;
+    }
+
+    &__instructions {
+        color: $color-Dove-Gray;
+        font-size: 15px;
+        margin-bottom: 40px;
+        margin-top: 26px;
+    }
+
+    &__label {
+        margin-bottom: 11px;
+    }
+
+    
+
+    &__optional {
+
+    }
+    &__input--name,
+    &__input--phone,
+    &__input--email,
+    &__input--comment{
+        border: 1px solid $color-Alto;
+        display: block;
+        margin-bottom: 18px;
+        background-color: $color-White;
+    }
+
+    &__input--name {
+        
+    }
+
+    &__input--phone {
+        
+    }
+
+    &__input--email {
+        
+    }
+
+    &__input--comment {
+
+    }
+    
+}
+
+@media screen and (min-width: 642px) {
+
+    .email {
+        max-width: 705px;
+
+        & > form {
+            background-color: $color-Wild-Sand;
+        }
+
+    }    
+
+}

@@ -7,9 +7,12 @@ class MobileNav extends Component {
 			return (
 				<div>
 					<div className="mobile-nav  row">
-						
-                        <h2 className="mobile-nav__header  text-center">Menu</h2>
-                        <span className="mobile-nav__exit">X</span>
+                        <div className="columns small-offset-4 small-3">
+                            <h2 className="mobile-nav__header  text-center">Menu</h2>
+                        </div>
+                        <div className="columns small-1 small-offset-3">        
+                            <button onClick={(event) => {this.props.mobileNavClick(event)}} className="mobile-nav__exit">X</button>
+                        </div> 
                         <ul>
                             <div className="mobile-nav__item-row  columns">
                                 <div className="columns small-offset-1 small-6">

@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
 
 class DropDownMenu extends Component {
-
-	// const list = props.cardList.map((card, index) => {
-	// 	if (something) {
-	// 		render (
-	// 			// render some html data
-	// 		) else {
-	// 			render (
-	// 				// render something else
-	// 			)
-	// 		}
-	// 	}
-	// })
 	
 		render(){
 
