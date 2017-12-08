@@ -111,15 +111,7 @@ class App extends Component {
                     </div>{/* /.columns */}
                 </div>  
               </div>{/* /.hero__filter */}  
-              <div className="row">
-                <div className="columns small-offset-1">
-                  <form className="hero__form" method="GET">    
-                    <nav>
-                       {this.state.dropDown && dropDownMenu}
-                    </nav>  
-                  </form>
-                </div>{/* /.columns */}
-              </div>{/* /.row */}    
+              {this.state.dropDown && dropDownMenu}
             </div>{/* /.hero__options */}
 {/* MOBILE ONLY */} 
 

@@ -18,32 +18,40 @@ class DropDownMenu extends Component {
 
 			return (
 				<div>
-					<ul>
-						<li>
-						  	<a href="#">
-								<input type="checkbox" value="Service"/>
-								<label className="hero__options--item" htmlFor="Service">Service</label>
-						  	</a>
-						</li> 
-						<li>
-						  	<a href="#">
-								<input type="checkbox" value="Installation"/>
-								<label className="hero__options--item" htmlFor="Installation">Installation</label>
-						  	</a>
-						</li> 
-						<li>
-						  	<a href="#">
-								<input type="checkbox" value="Residential"/>
-								<label className="hero__options--item" htmlFor="Residential">Residential</label>
-						  	</a>
-						</li> 
-						<li>
-						  	<a href="#">
-								<input type="checkbox" value="Commercial"/> 
-								<label className="hero__options--item"  htmlFor="Commercial">Commercial</label>
-						  	</a>
-						</li>
-					</ul> 
+					<div className="row">
+						<div className="columns small-offset-1">
+							<form className="hero__form" method="GET">    
+								<nav>
+									<ul>
+										<li>
+											<a href="#">
+												<input type="checkbox" value="Service"/>
+												<label className="hero__options--item" htmlFor="Service">Service</label>
+											</a>
+										</li> 
+										<li>
+											<a href="#">
+												<input type="checkbox" value="Installation"/>
+												<label className="hero__options--item" htmlFor="Installation">Installation</label>
+											</a>
+										</li> 
+										<li>
+											<a href="#">
+												<input type="checkbox" value="Residential"/>
+												<label className="hero__options--item" htmlFor="Residential">Residential</label>
+											</a>
+										</li> 
+										<li>
+											<a href="#">
+												<input type="checkbox" value="Commercial"/> 
+												<label className="hero__options--item"  htmlFor="Commercial">Commercial</label>
+											</a>
+										</li>
+									</ul>
+								</nav>  
+							</form>
+						</div>{/* /.columns */}
+					</div>{/* /.row */}   
 				</div> 
 			);
 		  }     
