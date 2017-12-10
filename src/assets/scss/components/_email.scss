@@ -3,11 +3,9 @@
     position: absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
     background-color: $color-White;
-    width: 80%;
-    margin: 0 10%;
-    padding-top: 100px; /* Location of the box */
-
-
+    margin: -14% 10% 0%;
+    height: 100vh;
+    transform: translate(50%);
 
     & > .columns {
         min-height: 20px;
@@ -19,7 +17,7 @@
 
     &__header {
         color: $color-White;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
         margin-top: 25px;
         font-size: 14px;
         display: inline-block;
@@ -40,22 +38,50 @@
         margin-bottom: 34px;
     }
 
+    &__below-the-header {
+        background-color: $color-White;
+    } 
+
     &__instructions {
         color: $color-Dove-Gray;
         font-size: 15px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         margin-top: 26px;
+    }
+
+    &__form {
+        background-color: $color-Wild-Sand;
+        width: 641px;
+        padding-top: 32px;
+        margin-left: 31px;
+        margin-right: 31px;
     }
 
     &__label {
         margin-bottom: 11px;
+        margin-left: 22px;
+        color: $color-Dove-Gray;
+        font-size: 14px;
     }
 
-    
+    &__accurate {
+        width: 22px;
+        border-radius: 25%;
+        border: 1px solid $color-Alto;
+        float: right;
+        margin-right: 24px;
+        background-color: $color-Wild-Sand; 
+    }
 
     &__optional {
-
+        margin-left: 22px;
+        display: inline-block;
+        float: right;
+        margin-right: 24px;
+        color: $color-Silver-2;
+        font-size: 14px;
     }
+
     &__input--name,
     &__input--phone,
     &__input--email,
@@ -64,25 +90,159 @@
         display: block;
         margin-bottom: 18px;
         background-color: $color-White;
+        margin-left: 22px;
     }
 
     &__input--name {
-        
+        width: 595px;
+        height: 51px; 
+    }    
+
+    &__input--name::placeholder {
+        padding-left: 16px;
+        font-size: 15px;
+        color: $color-Dove-Gray;
     }
 
     &__input--phone {
-        
+        width: 250px;
+        height: 51px;
     }
 
     &__input--email {
-        
+        width: 595px;
+        height: 51px;
     }
 
     &__input--comment {
-
+        width: 595px;
+        height: 84px;
     }
+
+    &__question--section {
+        margin-left: 10px;
+        border-bottom: 2px solid $color-Gallery;
+        margin-bottom: 40px;
+    }
+
+    &__question--the-question {
+        font-family: Helvetica, sans-serif;
+        font-size: 14px;
+        margin-left: 22px;
+    }
+
+    &__question--yes,
+    &__question--no {
+        font-size: 14px;
+        color: $color-Mine-Shaft;
+        border: 1px solid $color-Mine-Shaft;
+        padding: 10px 4px;
+        width: 62px;
+        height: 30px;
+        margin-left: 22px;
+    }
+
+    &__question--no {
+        margin-left: 10px;
+    }
+
+    &__question--yes:active,
+    &__question--no:active,
+    &__question--yes:hover,
+    &__question--no:hover {
+        background-color: $color-Robins-Egg-Blue;
+        color: $color-White;
+    }
+
+    &__button,
+    &__button:hover  {
+        background: none;
+        width: 50%;
+        height: 19px;
+        margin: 0 auto 20px auto;
+        display: block;
+        padding-bottom: 40px;
+    }
+
+    &__send-email {
+        font-size: 16px;
+        line-height: 19px;
+        font-family: Helvetica, sans-serif;
+        width: 145px;
+        border: none;
+        background: transparent; 
+        color: $color-Mine-Shaft;
+        display: inline-block;
+        padding-left: -20px;
+    }
+
+    &__send-email--small {
+        color: $color-Robins-Egg-Blue;
+        border: none;
+        float: right;
+        font-size: 16px;
+    }    
+
+    &__right-arrow {
+        color: $color-Robins-Egg-Blue;
+        font-size: 14px;
+        margin-right: 12px;
+        display: inline-block;
+    }
+
+    &__subtext {
+        background-color: $color-Wild-Sand; 
+        padding-top: 10px;
+    }
+
+    &__subtext--text {
+       font-size: 13px;
+       font-family: Helvetica, sans-serif;
+       color: $color-Dove-Gray; 
+    }
+
+    @media screen and (max-width: 641px) { 
+        transform: none;
+        width: 350px;
+        margin: 0% 7%;
+
+        &__form {
+            width: 350px;
+            margin-left: 0px;
+            margin-right: 0px;
+            background-color: transparent;
+        }    
+
+        &__input--name,
+        &__input--phone,
+        &__input--email,
+        &__input--comment { 
+            height: 49px;
+            margin-left: 0px;
+        } 
+
+        &__label {
+            margin-left: 0px;
+        }
+        
+        &__input--name,
+        &__input--email,
+        &__input--comment { 
+            width: 317px;
+        }  
+
+        &__question--the-question,
+        &__question--section {
+            margin-left: 0px;
+        }
+
+    }//mobile 
     
-}
+    @media screen and (min-width: 642px) and (max-width: 1025px){  
+        transform: none;
+    }    
+
+}//email
 
 @media screen and (min-width: 642px) {
 
