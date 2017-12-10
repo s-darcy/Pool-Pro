@@ -206,6 +206,10 @@
         width: 350px;
         margin: 0% 7%;
 
+        &__instructions {
+            margin-bottom: 0px;
+        }    
+
         &__form {
             width: 350px;
             margin-left: 0px;
@@ -234,6 +238,15 @@
         &__question--the-question,
         &__question--section {
             margin-left: 0px;
+        }
+
+        &__question--section {
+            margin-bottom: 20px;
+        }    
+
+        &__send-email--small {
+            float: right;
+            width: 70px
         }
 
     }//mobile 

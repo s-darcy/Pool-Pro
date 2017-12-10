@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Toggle } from "react-powerplug";
+import axios from 'axios';
 
 import './assets/css/styles.css';
 import './assets/js/project.js';
+import data from './data.js';
+
 import DropDownMenu from './DropDownMenu';
 import MobileNav from './MobileNav';
 import Email from './Email';
@@ -15,14 +18,49 @@ class App extends Component {
       dropDown : false,
       mobileNavClicked : false,
       emailClicked : false,
+      serviceClicked : false,
+      installationClicked : false,
+      residentialClicked : false,
+      commercialClicked : false,
+      dealersData : []
 
     }; 
 
+    //Constructor Binding State
     this.dropDownClick = this.dropDownClick.bind(this);
     this.mobileNavClick = this.mobileNavClick.bind(this);
     this.emailClick = this.emailClick.bind(this);
+    this.serviceClick = this.serviceClick.bind(this);
+    this.installationClick = this.installationClick.bind(this);
+    this.residentialClick = this.residentialClick.bind(this);
+    this.commercialClick = this.commercialClick.bind(this);
+
+    //Fetching Data on load
+    this.fetchData();
    
-  }//Constructor Binding State
+  }//constructor
+
+    //----------------------------------------------------------//
+  //--------------------Fetch Data---------------------//
+  //--------------------------------------------------------//
+
+  fetchData () {
+    axios.get('./dealers.json')
+      .then((res) => {
+        console.log(res);
+
+        this.setState({
+          dealersData : res.data
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  //----------------------------------------------------------//
+  //--------------------Handle Clicks---------------------//
+  //--------------------------------------------------------//
 
     dropDownClick = (event) => {
       event.preventDefault();
@@ -45,12 +83,51 @@ class App extends Component {
         });
     };
 
+    serviceClick = (event) => {
+      event.preventDefault();
+        this.setState({
+          serviceClicked : !this.state.serviceClicked
+        });
+    };
+
+    installationClick = (event) => {
+      event.preventDefault();
+        this.setState({
+          installationClicked : !this.state.installationClicked
+        });
+    };
+
+    residentialClick = (event) => {
+      event.preventDefault();
+        this.setState({
+          residentialClicked : !this.state.residentialClicked
+        });
+    };
+
+    commercialClick = (event) => {
+      event.preventDefault();
+        this.setState({
+          commercialClicked : !this.state.commercialClicked
+        });
+    };
+    
+  //----------------------------------------------------------//
+  //--------------------Filter Functions---------------------//
+  //--------------------------------------------------------// 
+
+
+
   render() {
 
     let mobileNavClicked = this.state.mobileNavClicked;
     let emailClicked = this.state.emailClicked;
 
-    let dropDownMenu = <DropDownMenu />
+    let dropDownMenu = <DropDownMenu
+      serviceClick={this.serviceClick}
+      installationClick={this.installationClick}
+      residentialClick={this.residentialClick}
+      commercialClick={this.commercialClick}
+     />
     let mobileNav = <MobileNav 
       mobileNavClick={this.mobileNavClick}
     />
@@ -167,19 +244,19 @@ class App extends Component {
                     <nav>
                       <ul className="inline-list">
                         <li>
-                          <input  type="checkbox" value="Service" />
+                          <input onClick={(event) => {this.serviceClick(event)}} type="checkbox" value="Service" />
                           <label className="hero__options--item" htmlFor="Service">Service</label>
                         </li> 
                         <li>
-                          <input type="checkbox" value="Installation" />
+                          <input onClick={(event) => {this.installationClick(event)}} type="checkbox" value="Installation" />
                           <label className="hero__options--item" htmlFor="Installation">Installation</label>
                         </li> 
                         <li>
-                          <input type="checkbox" value="Residential"/>
+                          <input onClick={(event) => {this.residentialClick(event)}} type="checkbox" value="Residential"/>
                           <label className="hero__options--item" htmlFor="Residential">Residential</label>
                         </li> 
                         <li>
-                          <input type="checkbox" value="Commercial"/> 
+                          <input onClick={(event) => {this.commercialClick(event)}} type="checkbox" value="Commercial"/> 
                           <label className="hero__options--item"  htmlFor="Commercial">Commercial</label>
                         </li>
                       </ul> 
@@ -196,7 +273,7 @@ class App extends Component {
             <div className="row">
               <div className="card-section columns medium-4">
                 <div className="cards text-center">
-                  <h2 className="cards__header text-center">Aqua Experts</h2>
+                {/* {this.state.dealersData.dealers.data.name.map((name, i) => <h2 className="cards__header text-center">{}</h2>)} */}
                   <button className="cards__phone text-center">
                     <a href="#" type="button">
                       <i className="fa fa-phone" aria-hidden="true"></i>
