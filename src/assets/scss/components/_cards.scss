@@ -82,15 +82,23 @@
     &__services--group {
         background-color: $color-Wild-Sand;
         margin-bottom: 30px;
-        display: flex;
-        justify-content: space-around;
+
         padding-top: 25px;
     }
 
     &__services {
         color: $color-Mine-Shaft;
         padding-bottom: 15px;
+        margin-right: 10%;
+        width: 40%;
+        display: inline-block;
     } 
+
+    &__services--block {
+        display: inline-block;
+        margin-left: 10%;
+        width: 100%;
+    }    
 
     &__services > i {
         color: $color-Silver-2;
@@ -131,4 +139,10 @@
             border-bottom: 1px solid $color-Gallery;
         }
     }    
+}
+
+@media screen and (max-width: 641px) {
+    .fix-top-margin {
+        margin-top: 0px;
+    }
 }
