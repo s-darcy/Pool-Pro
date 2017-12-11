@@ -8,7 +8,7 @@ class Card extends Component {
                 <div>
                     <div className="card-section columns medium-4">
                         <div className="cards text-center">
-                            {/* <h2 className="cards__header text-center">{this.props.dealer.data.name}</h2> */}
+                            <h2 className="cards__header text-center" >{this.props.dealersData.data.name}</h2>
                             <button className="cards__phone text-center">
                                 <a href="#" type="button">
                                 <i className="fa fa-phone" aria-hidden="true"></i>

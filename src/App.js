@@ -53,7 +53,7 @@ class App extends Component {
         // console.log(response);
 
         this.setState({
-          dealersData : res.data
+          dealersData : res.data.dealers
         });
       })
       .catch((err) => {
@@ -127,14 +127,16 @@ class App extends Component {
     let dealersData = this.state.dealersData;
 
 
-    let dealerCard = Object.keys(dealersData).map((dealer, i) => {
+    let dealerCard = Object.values(dealersData).map((dealersData, index) => {
       return (
         <Card
+          dealersData={dealersData}
           emailClick={this.emailClick}
         />
       );
     }, this);
-  
+  console.log(dealerCard);
+
     let dropDownMenu = <DropDownMenu
       serviceClick={this.serviceClick}
       installationClick={this.installationClick}
@@ -284,9 +286,7 @@ class App extends Component {
           <section>
             {this.state.emailClicked && email}
             <div className="row">
-
-                  {dealerCard} 
-
+              {dealerCard} 
             </div>{/* /.cards */}                
           </section>{/* /.section */}
 
