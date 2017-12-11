@@ -283,7 +283,7 @@ class App extends Component {
 {/* DESKTOP and TABLET */}           
           </section>{/* /.hero */}
 
-          <section>
+          <section className="fix-top-margin">
             {this.state.emailClicked && email}
             <div className="row">
               {dealerCard} 
