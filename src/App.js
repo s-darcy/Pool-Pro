@@ -9,6 +9,7 @@ import data from './data.js';
 import DropDownMenu from './DropDownMenu';
 import MobileNav from './MobileNav';
 import Email from './Email';
+import Card from './Card';
 class App extends Component {
 
   constructor() {
@@ -48,6 +49,8 @@ class App extends Component {
     axios.get('./dealers.json')
       .then((res) => {
         console.log(res);
+        // var response = JSON.parse(res);
+        // console.log(response);
 
         this.setState({
           dealersData : res.data
@@ -121,7 +124,17 @@ class App extends Component {
 
     let mobileNavClicked = this.state.mobileNavClicked;
     let emailClicked = this.state.emailClicked;
+    let dealersData = this.state.dealersData;
 
+
+    let dealerCard = Object.keys(dealersData).map((dealer, i) => {
+      return (
+        <Card
+          emailClick={this.emailClick}
+        />
+      );
+    }, this);
+  
     let dropDownMenu = <DropDownMenu
       serviceClick={this.serviceClick}
       installationClick={this.installationClick}
@@ -269,59 +282,12 @@ class App extends Component {
           </section>{/* /.hero */}
 
           <section>
-          {this.state.emailClicked && email}
+            {this.state.emailClicked && email}
             <div className="row">
-              <div className="card-section columns medium-4">
-                <div className="cards text-center">
-                {/* {this.state.dealersData.dealers.data.name.map((name, i) => <h2 className="cards__header text-center">{}</h2>)} */}
-                  <button className="cards__phone text-center">
-                    <a href="#" type="button">
-                      <i className="fa fa-phone" aria-hidden="true"></i>
-                      <span className="text-center">Tap to call</span>
-                      1.888.888.8888
-                    </a>
-                  </button>  
-                  <p className="cards__text text-center">Can’t talk now? Click below to send an email.</p>
-                  <button id="myBtn" onClick={(event) => {this.emailClick(event)}} className="cards__contact-button  hidden-for-medium-up text-center"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
-                  <button id="myBtn" onClick={(event) => {this.emailClick(event)}} className="cards__contact-button  hidden-for-small-only text-center"><i className="fa fa-envelope" aria-hidden="true"></i>Contact this Pro</button>
-                  <h3 className="cards__business-hours--header ">Business Hours</h3>
-                  <ul>
-                      <li className="cards__business-hours--item  text-center">Weekdays 7:00am - 7:00pm</li>
-                      <li className="cards__business-hours--item  text-center">Saturdays 7:00am - 3:00pm</li>
-                      <li className="cards__business-hours--item  text-center">Sundays - On Call</li>
-                  </ul>
-                  <div className="cards__services--group">
-                    <ul className="inline-list text-center">
-                      <li>
-                        <a className="cards__services" href="#">
-                          <i className="fa fa-star" aria-hidden="true"></i>
-                            Installation Pro
-                        </a>   
-                      </li>
-                      <li>
-                        <a className="cards__services" href="#">
-                          <i className="fa fa-cog" aria-hidden="true"></i>
-                            Service Pro
-                        </a>   
-                      </li>
-                      < br/>   
-                      <li>
-                        <a className="cards__services" href="#">
-                          <i className="fa fa-home" aria-hidden="true"></i>
-                            Residential Pro
-                        </a>   
-                      </li>
-                      <li>
-                        <a className="cards__services" href="#">
-                        <img className="cards__services--users" alt="Pool Pros Logo" src="/img/users.svg" />
-                            Commercial Pro
-                        </a>   
-                      </li>
-                    </ul>
-                  </div>{/* /.card__services--group */}  
-                </div>{/* /.columns */}    
-              </div>{/* /.row */}
-            </div>{/* /.cards */}  
+
+                  {dealerCard} 
+
+            </div>{/* /.cards */}                
           </section>{/* /.section */}
 
       </main>
